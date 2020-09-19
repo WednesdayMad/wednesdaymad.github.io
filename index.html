@@ -4,155 +4,69 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Happy Birthday Oppa!!!</title>
-  <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+  <title>Happy Anniversary Namchin!!!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="sakura.css" />
 </head>
 <body>
-  <div class="card" style="cursor: pointer;">
-    <div class="imgBox" >
-      <div class="bark" onclick="togglePlay();"></div>
-      <img src="cover.jpg">
-    </div>
-    <div class="details" >
-      <p class="small">Dear Daun,
-      </p>
-      <p class="text-center xsmall" style="overflow-y: scroll; overflow-x:hidden; height: 260px;" >When i met you I thought 
-I was through with love
-Was just in it for the fun
-Wasnt really expecting alot
-
-I guess you thought the same
-Just two people
-Trying to stay sane
-Wanting to find an escape
-
-I'll be honest
-I didn't really think it through
-Part of me was'nt sure
-How things would go with you
-
-I guess you thought the same
-Just two people
-Avoiding past mistakes
-Trying not to hurt again
-
-I dont know what to believe in
-But if it you and me 
-I'm willing
-To leap into the unknown
-I'm letting go of all control
-
-I'm frefalling 
-Down, down, down 
-Into your arms
-Hold me 
-Down, down, down
-Don't you dare let go
-I love you 
-Down, down, down
-From the bottom of my heart
-So down, down, down 
-Here I go
-
-Yeah I'ts intense, I know
-People might think I'm stupid
-Fell inlove within a month
-I'm not being very lucid
-
-I guess they'd doubt and say
-We're just too hopeful
-Its thousands of miles away
-But through it all
-You make me wanna stay
-
-If its you, I know 
-That I wont regret a thing
-Even though I go, just know 
-I'll come right back again
-
-I'll believe in you 
-And say I am hopeful
-I know we'll find a way
-I dont care if it sounds cliche
-
-Now I know what to believe in
-If its you and me I'm willing
-To fly into the unknown
-I'm giving God all the control
-
-I'm frefalling 
-Down, down, down 
-Into your warmth
-Hold me 
-Down, down, down
-Let me just say
-I love you 
-Down, down, down
-With all of my heart
-So down, down, down
-With you I'll stay
-
-I don't know alot of things 
-And what will happen next
-Just taking things day by day
-Moments with you are the best
-
-I think you're perfect
-And I feel safe with you
-I feel blessed beyond compare
-To have met you
-And when I'm lost
-And I don't know where to go
-There's no direction 
-I'd rather go but
-
-Down, down, down 
-Into your love
-Thank you 
-Down, down, down
-For being born 
-I love you 
-Down, down, down
-No matter where you are
-So down, down, down 
-Let me be the 
-Only one, to stay
-
-Oppa, Let me be the
-Only one to love you 
-Not just now
-But into the future
-It's 1:14 pm,
-Thank you for being born
-I know I can't hold you now
-But hopefully next year I can
-</p>
-      <p class="small text-right"><br>Sincerely yours,  <br>Wednesday ♥  </p>
-    </div>
-  </div>
-	<audio src="HappyBdaySong.mp3" autoplay loop id="myAudio"></audio>
+	<div class="card" style="cursor: pointer;">
+		<div class="imgBox" >
+			<div class="bark" onclick="togglePlay();"></div>
+			<img src="cover.jpg">
+		</div>
+		<div class="details" onclick="generateWord();">
+			<p class="text-right xsmall"><span id="date"></p>
+			<p class="large">Dear Daun,</p>
+			<p class="text-justify small" >	<span id="message"></p>
+			<p class="text-right medium">Sincerely Yours,<br> Wednesday ♥</p>
+		</div>
+	</div>
+	<audio src="Better-Together-Us-The-Duo.mp3" loop autoplay id="myAudio"></audio>
 <!-- partial -->
-   <script src="confetti.js-master/confetti.js" text="text/javascript"></script>
+   <script src="message.js" text="text/javascript"></script>
+   <script src="sakura.js" text="text/javascript"></script>
    <script>
-    var myAudio = document.getElementById("myAudio");
-    var isPlaying = false;
+      var sakura = new Sakura('body', {
+        colors: [
+          {
+            gradientColorStart: 'rgba(255, 183, 197, 0.9)',
+            gradientColorEnd: 'rgba(255, 197, 208, 0.9)',
+            gradientColorDegree: 120,
+          },
+          {
+            gradientColorStart: 'rgba(255,189,189)',
+            gradientColorEnd: 'rgba(227,170,181)',
+            gradientColorDegree: 120,
+          },
+          {
+            gradientColorStart: 'rgba(212,152,163)',
+            gradientColorEnd: 'rgba(242,185,196)',
+            gradientColorDegree: 120,
+          },
+        ],
+        delay: 200,
+      });
 
-    function togglePlay() {
-      isPlaying ? myAudio.pause() : myAudio.play();
-    };
+   		var myAudio = document.getElementById("myAudio");
+		var isPlaying = false;
 
-    myAudio.onplaying = function() {
-      isPlaying = true;
-    };
-    myAudio.onpause = function() {
-      isPlaying = false;
-    };
+		function togglePlay() {
+		  isPlaying ? myAudio.pause() : myAudio.play();
+		};
 
-    var play = function(event){ event.srcElement.classList.toggle("playing")
-    }
+		myAudio.onplaying = function() {
+		  isPlaying = true;
+		};
+		myAudio.onpause = function() {
+		  isPlaying = false;
+		};
+
+		var play = function(event){ event.srcElement.classList.toggle("playing")
+}
+		
    </script>
+
 </body>
 </html>
